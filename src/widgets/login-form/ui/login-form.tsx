@@ -1,6 +1,10 @@
 import { Button, Form, Input } from 'antd';
+import { IMaskInput } from 'react-imask';
 
-const onFinish = (values: FieldType) => {
+import { type LoginFormFields } from '../model/login-form.types';
+import styles from './login-form.module.scss';
+
+const onFinish = (values: LoginFormFields) => {
   console.log('Success:', values);
 };
 
@@ -8,22 +12,7 @@ const onFinishFailed = (errorInfo: any) => {
   console.log('Failed:', errorInfo);
 };
 
-interface FieldType {
-  login?: number;
-  password?: string;
-}
-
 export const LoginForm = () => {
-  const prefixSelector = (
-    <Form.Item name="prefix" noStyle>
-      +7
-      {/* <Select style={{ width: 70 }}>
-        <Option value="86">+86</Option>
-        <Option value="87">+87</Option>
-      </Select> */}
-    </Form.Item>
-  );
-
   return (
     <Form
       name="basic"
@@ -31,29 +20,38 @@ export const LoginForm = () => {
       style={{ maxWidth: 600 }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
-      //   initialValues={{ requiredMarkValue: false }}
       requiredMark={false}
       autoComplete="off"
+      className="max-w-[320px]"
     >
-      <Form.Item<FieldType>
+      <Form.Item<LoginFormFields>
         label="ЛОГИН"
         name="login"
         rules={[{ required: true, message: 'Обязательное поле.' }]}
       >
-        <Input placeholder="+7__ __-__-__" addonBefore={prefixSelector} />
+        <IMaskInput
+          className={styles.input}
+          mask={'+7 (900) 000-00-00'}
+          radix="."
+          unmask={false}
+          placeholder="+7__ __-__-__"
+        />
       </Form.Item>
 
-      <Form.Item<FieldType>
+      <Form.Item<LoginFormFields>
         label="ПАРОЛЬ"
         name="password"
         rules={[{ required: true, message: 'Обязательное поле.' }]}
       >
-        <Input.Password placeholder="Введите значение" />
+        <Input.Password
+          className={styles.input}
+          placeholder="Введите значение"
+        />
       </Form.Item>
 
-      <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" htmlType="submit">
-          Submit
+      <Form.Item>
+        <Button type="primary" htmlType="submit" className={styles.button}>
+          ВОЙТИ
         </Button>
       </Form.Item>
     </Form>

@@ -9,6 +9,16 @@ export const lightTheme = {
       '"Apple Color Emoji"',
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"'
+    ].join(','),
+    fontFamilyCode: [
+      'Ubuntu',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"'
     ].join(',')
   },
   components: {
@@ -17,10 +27,10 @@ export const lightTheme = {
       fontFamily: 'Ubuntu',
       fontStyle: 'normal'
     },
-    FormItem: {
+    Button: {
+      borderRadius: 4,
       fontFamily: 'Ubuntu',
-      color: 'red'
-      // Add any other styles you want for the Form.Item component
+      fontStyle: 'normal'
     }
   }
 };
