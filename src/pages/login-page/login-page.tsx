@@ -1,4 +1,5 @@
 import React from 'react';
+import { Logotype } from 'ui-kit';
 
 import { LoginForm } from '@/widgets';
 
@@ -8,6 +9,7 @@ export const LoginPage: React.FC = () => {
   return (
     <div className={styles.root}>
       <div className={styles.login}>
+        <Logotype className="mb-8" />
         <LoginForm />
       </div>
     </div>

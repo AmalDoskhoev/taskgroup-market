@@ -1,4 +1,4 @@
 export interface LoginFormFields {
-  login?: number;
-  password?: string;
+  login: string;
+  password: string;
 }

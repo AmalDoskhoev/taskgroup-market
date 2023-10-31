@@ -10,8 +10,6 @@ import { useInjectColors } from '@/shared/hooks';
 // import { AppLoader } from '@/shared/ui';
 
 export const App = () => {
-  console.log(2);
-
   // const { isLoading } = useCheckAuth();
 
   useInjectColors();

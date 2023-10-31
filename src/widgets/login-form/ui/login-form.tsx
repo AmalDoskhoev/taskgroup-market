@@ -1,33 +1,50 @@
 import { Button, Form, Input } from 'antd';
 import { IMaskInput } from 'react-imask';
+import { useNavigate } from 'react-router-dom';
+
+import { routes } from '@/shared';
+import { notification } from '@/shared/libs';
 
 import { type LoginFormFields } from '../model/login-form.types';
 import styles from './login-form.module.scss';
 
-const onFinish = (values: LoginFormFields) => {
-  console.log('Success:', values);
-};
-
-const onFinishFailed = (errorInfo: any) => {
-  console.log('Failed:', errorInfo);
-};
-
 export const LoginForm = () => {
+  const navigate = useNavigate();
+
+  const onFinish = (values: LoginFormFields) => {
+    if (values.login !== '+7 (999) 999-99-99' || values.password !== 'admin') {
+      notification({
+        message: 'Авторизация не удалась',
+        type: 'error'
+      });
+    }
+    console.log('Success:', values);
+    navigate(routes.shop);
+  };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log(errorInfo);
+
+    notification({
+      message: 'Авторизация не удалась',
+      type: 'error'
+    });
+  };
+
   return (
     <Form
       name="basic"
       layout="vertical"
-      style={{ maxWidth: 600 }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
       requiredMark={false}
       autoComplete="off"
-      className="max-w-[320px]"
+      className="max-w-[320px] w-full"
     >
       <Form.Item<LoginFormFields>
         label="ЛОГИН"
         name="login"
-        rules={[{ required: true, message: 'Обязательное поле.' }]}
+        rules={[{ required: true, message: 'Обязательное поле.', min: 18 }]}
       >
         <IMaskInput
           className={styles.input}
@@ -49,11 +66,19 @@ export const LoginForm = () => {
         />
       </Form.Item>
 
-      <Form.Item>
-        <Button type="primary" htmlType="submit" className={styles.button}>
-          ВОЙТИ
+      <div>
+        <Form.Item>
+          <Button type="primary" htmlType="submit" className={styles.button}>
+            Войти
+          </Button>
+        </Form.Item>
+        <Button className={styles.link} type="link">
+          Регистрация агентства
         </Button>
-      </Form.Item>
+        <Button className={styles.link} type="link">
+          Забыли пароль?
+        </Button>
+      </div>
     </Form>
   );
 };
