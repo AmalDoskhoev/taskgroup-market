@@ -1,0 +1,47 @@
+.card {
+  width: 288px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text {
+  margin-top: 8px;
+}
+
+.favorites {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16%;
+}
+
+.favorites svg {
+  width: 24px;
+  height: 24px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.button {
+  background-color: var(--primary-pri-50);
+  height: 48px;
+  width: 80%;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.add {
+  background-color: var(--neutral-neu-300);
+  color: var(--primary-pri-50);
+}
+
+.add:hover {
+  background-color: var(--neutral-neu-200) !important;
+  color: var(--primary-pri-50) !important;
+}

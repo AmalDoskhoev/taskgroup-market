@@ -1,0 +1,28 @@
+.root {
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--neutral-neu-0);
+  z-index: 1;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.icon svg {
+  width: 5em;
+  height: 5em;
+}
+
+.icon svg path {
+  fill: var(--primary-pri-50);
+}

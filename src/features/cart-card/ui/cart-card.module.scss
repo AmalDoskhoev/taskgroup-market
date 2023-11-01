@@ -1,0 +1,73 @@
+.cardContent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardImage {
+  max-width: 250px;
+  width: 100%;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-left: 8px;
+}
+
+.description {
+  max-width: 400px;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 98px;
+  width: min-content;
+  height: 34px;
+  border: 1px solid var(--primary-pri-200);
+  border-radius: 8px;
+}
+
+.counterIcon {
+  cursor: pointer;
+  padding: 8px;
+  transition: 0.3s;
+  border-radius: 30%;
+}
+
+.counterIcon:hover {
+  background-color: var(--primary-pri-100);
+}
+
+.counterIcon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.counterIcon svg path {
+  fill: var(--primary-pri-200);
+}
+
+.deleteIcon {
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.deleteIcon:hover {
+  background-color: var(--primary-pri-100);
+}
+
+.deleteIcon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.deleteIcon svg path {
+  fill: var(--primary-pri-200);
+}

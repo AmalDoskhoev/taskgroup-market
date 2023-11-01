@@ -3,7 +3,7 @@ import { Logotype } from 'ui-kit';
 
 import { LoginForm } from '@/widgets';
 
-import styles from './login-page.module.scss';
+import styles from './login.module.scss';
 
 export const LoginPage: React.FC = () => {
   return (

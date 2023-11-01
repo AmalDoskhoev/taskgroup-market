@@ -1,7 +1,8 @@
 export enum RoutesMap {
   Auth = 'auth',
   Login = 'login',
-  Shop = 'shop'
+  Shop = 'shop',
+  Cart = 'cart'
 }
 
 export const routes = {
@@ -9,5 +10,8 @@ export const routes = {
   login: `/${RoutesMap.Auth}/${RoutesMap.Login}`,
 
   // Магазин
-  shop: `/${RoutesMap.Shop}`
+  shop: `/${RoutesMap.Shop}`,
+
+  // Корзина
+  cart: `/${RoutesMap.Cart}`
 };

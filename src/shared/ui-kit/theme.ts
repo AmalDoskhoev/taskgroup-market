@@ -19,7 +19,9 @@ export const lightTheme = {
       '"Apple Color Emoji"',
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"'
-    ].join(',')
+    ].join(','),
+    fontSizeHeading3: 14,
+    lineHeightHeading3: '18px'
   },
   components: {
     Input: {
