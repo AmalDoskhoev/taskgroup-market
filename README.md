@@ -1,6 +1,6 @@
 # Деплой проекта
 
-https://main--gleaming-entremet-8547b3.netlify.app/auth/login
+[https://main--gleaming-entremet-8547b3.netlify.app/auth/login](https://654279a518003b000883610a--gleaming-entremet-8547b3.netlify.app/auth/login)
 
 # Тестовый аккаунт
 
