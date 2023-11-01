@@ -20,8 +20,7 @@ export const lightTheme = {
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"'
     ].join(','),
-    fontSizeHeading3: 14,
-    lineHeightHeading3: '18px'
+    fontSizeHeading3: 14
   },
   components: {
     Input: {
